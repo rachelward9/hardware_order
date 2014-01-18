@@ -1,0 +1,31 @@
+<polymer-element name="main-view">
+  <template>
+    <h1>Hardware Order</h1>
+
+      <div class="box-container">
+          <form on-submit="{{submit}}">
+              <input type="text" placeholder="Enter quantity..." value="{{enteredQuantity}}">
+          </form>
+
+          <div>
+              <ul class="list-group">
+                  <template repeat="{{item in hardwareList}}">
+                      <li is="hardware-item-view" todoItem="{{item}}" class="list-group-item"></li>
+                  </template>
+              </ul>
+          </div>
+
+          <div>
+              <table>
+                  <tr>Total</tr><tr>{{calculateTotal}}</tr>
+              </table>
+          </div>
+
+          <div class="flexbox">
+              <button class="btn btn-default" on-click="{{purchase}}">Purchase</button>
+          </div>
+      </div>
+  </template>
+
+  <script type="application/dart" src="main_view.dart"></script>
+</polymer-element>
