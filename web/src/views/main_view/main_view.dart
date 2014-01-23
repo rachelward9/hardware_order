@@ -2,8 +2,6 @@ library main_view;
 
 import 'dart:html';
 import 'package:polymer/polymer.dart';
-import 'package:polymer_expressions/filter.dart';
-import '../../utils/filters.dart';
 import '../../model/hardware_item.dart';
 
 @CustomTag('main-view')
@@ -18,9 +16,6 @@ class MainView extends PolymerElement {
 
   // strings
   static const String SAMPLE_STRING = "sample string";
-
-  // filters and transformers can be referenced as class fields
-  final Transformer asInteger = new StringToInt();
 
   // non-visual initialization can be done here
   MainView.created() : super.created();
